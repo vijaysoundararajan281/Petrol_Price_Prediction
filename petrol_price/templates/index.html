@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Petrol Price Predictor</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet'>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+        
+    </head>
+    <body>
+        
+        <div class="login">
+            <h1><font color="#000000">Petrol Price Predictor </font></h1>
+            
+            <form action="{{url_for('predict')}}"method="post">
+                <input type="text" name="state" placeholder="Enter State:" required="required"><br><br>
+                <input type="text" name="city" placeholder="Enter City:" required="required"><br><br>
+                <input type="text" name="date" placeholder="Enter Date:" required="required"><br><br>
+                <input type="text" name="month" placeholder="Enter Month:" required="required"><br><br>
+                <input type="text" name="year" placeholder="Enter Year:" required="required"><br><br>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Prediction</button>
+                
+            </form>
+            <br>
+            <br>
+            <h2><p>
+            <font color="#000000">
+            <p><span style="background-color:grey">
+            {{prediction_text}}
+        </span></p>
+        </font>
+        </p>
+        </p>
+    </h2>
+        </div>
+    </body>
+</html>
